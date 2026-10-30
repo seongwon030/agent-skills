@@ -6,8 +6,16 @@ set -euo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
 DEST="${CODEX_HOME:-${HOME:?HOME 없음. CODEX_HOME 지정}/.codex}/skills"
-ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || { echo "과제 레포 루트(git 저장소 안)에서 실행하세요."; exit 1; }
+if ! ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"; then
+  git init -q && ROOT="$(pwd)"
+  echo "git 저장소가 없어 현재 디렉터리에 git init 했다: $ROOT"
+fi
 [ "$ROOT" != "$HERE" ] || { echo "agent-skills 레포 안이 아니라 과제 레포에서 실행하세요."; exit 1; }
+if [ -z "$(git -C "$ROOT" config user.name)" ]; then
+  git -C "$ROOT" config user.name "${USER:-participant}"
+  git -C "$ROOT" config user.email "${USER:-participant}@local"
+  echo "git user.name/email이 비어 있어 레포 로컬로 채웠다 (커밋 실패 방지)."
+fi
 
 mkdir -p "$DEST"
 for s in "$HERE"/skills/*/; do
