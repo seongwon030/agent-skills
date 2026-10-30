@@ -19,6 +19,28 @@ git clone https://github.com/seongwon030/agent-skills /tmp/agent-skills && bash 
 | 맥락 길어지면 | `$log sum` | `NOTES.md` 현재 상태 갱신 |
 | 끝 25분 전 | `$wrap` | 제출 체크(실행해서) + `RECALL.md`(약점 → 파급 → 다음 검증) |
 
+## 시험 당일 (터미널에서 `cat /tmp/agent-skills/README.md`)
+
+사전체험 15분:
+1. `codex --version` 기록
+2. 과제 루트에서 위 설치 한 줄
+3. `codex` → `$` 입력 → `kickoff` 뜨는지. 안 뜨면 폴백
+4. Cofa Helper에 "본인이 만든 공개 GitHub 스킬 레포를 clone해 써도 되는지" 한 번 묻기
+5. Browser 미리보기 1회, `node --version` 1회
+
+본 과제 180분:
+
+| 때 | 치는 것 |
+|---|---|
+| 0~15분 | README 정독, 실무자 DM 인터뷰, `$kickoff` |
+| 가정 목록이 나오면 | 하나는 본인 말로 고친다: `N번은 아니야. ~로 하자. 이유는 ~. 나머지는 수정 없음.` 고칠 게 없으면 `수정 없음.` |
+| 단계마다 | `N단계 구현해. 끝나면 $log 하고 커밋해.` |
+| 60분·120분쯤 | `$log sum` |
+| 종료 25분 전 | `$wrap` → `RECALL.md` 읽기 |
+| 종료 10분 전 | "제출하고 문제풀기" |
+
+서술형(AI 금지)은 RECALL 구조 그대로: 약점 위치 → 왜 위험한가·파급 → 다음에 검증할 것.
+
 ## 원칙
 
 - 근거 없는 문서는 쓰지 않는다. 검증 줄에는 이번 턴에 실행한 명령과 결과만 적는다.

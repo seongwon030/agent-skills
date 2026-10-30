@@ -25,3 +25,4 @@ fi
 
 echo "설치됨 ($DEST): $(ls "$HERE/skills" | tr '\n' ' ')"
 echo "다음: codex 를 (재)실행한 뒤 \$kickoff. 목록에 안 뜨면 codex --version 확인 후 SKILL.md 본문을 AGENTS.md에 붙이는 폴백."
+echo "당일 순서: cat $HERE/README.md"
