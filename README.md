@@ -25,8 +25,9 @@ git clone https://github.com/seongwon030/agent-skills /tmp/agent-skills && bash 
 1. `codex --version` 기록
 2. 과제 루트에서 위 설치 한 줄
 3. `codex` → `$` 입력 → `kickoff` 뜨는지. 안 뜨면 폴백
-4. Cofa Helper에 "본인이 만든 공개 GitHub 스킬 레포를 clone해 써도 되는지" 한 번 묻기
-5. Browser 미리보기 1회, `node --version` 1회
+4. Cofa Helper에 두 가지 묻기: "본인이 만든 공개 GitHub 스킬 레포를 clone해 써도 되는지", "이 환경에서 Skill 적용 방법이 따로 있는지"(있으면 그 방법을 따른다)
+5. `/model`에서 권장 모델 + reasoning **medium**. 토큰 사용량이 간접 평가에 들어간다. 막혔을 때만 high
+6. Browser 미리보기 1회, `node --version` 1회
 
 본 과제 180분:
 
