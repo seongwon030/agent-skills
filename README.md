@@ -17,7 +17,7 @@ git clone https://github.com/seongwon030/agent-skills /tmp/agent-skills && bash 
 | 시작 | `$kickoff` | `AGENTS.md` — 목표·제약·작업분해·검증. 계획·가정만, 코드 없음 |
 | 단계마다 | `$log` | `NOTES.md` append — 결정·바꾼 것·깨지는 입력 3가지·실행한 검증 + 작은 커밋 |
 | 맥락 길어지면 | `$log sum` | `NOTES.md` 현재 상태 갱신 |
-| 끝 25분 전 | `$wrap` | 제출 체크(실행해서) + `RECALL.md`(약점 → 파급 → 다음 검증) |
+| 끝 25분 전 | `$wrap` | 제출 체크(실행해서) + `RECALL.md`(약점 → 파급 → 다음 검증, 예상 질문 최대 3개) |
 
 ## 시험 당일 (터미널에서 `cat /tmp/agent-skills/README.md`)
 
@@ -42,6 +42,8 @@ git clone https://github.com/seongwon030/agent-skills /tmp/agent-skills && bash 
 | 종료 10분 전 | "제출하고 문제풀기" |
 
 서술형(AI 금지)은 RECALL 구조 그대로: 약점 위치 → 왜 위험한가·파급 → 다음에 검증할 것.
+
+"왜 이렇게 구현했나"는 비용 → 하드 제약 → 최적화 목표 → 대안이 못 하는 것 순서로 답한다. 제약(어기면 무효)과 목표(그 안에서 최대화)를 섞지 않는다. 기억이 안 나는 질문도 "모름"으로 끝내지 말고 "제 기준대로라면 이 입력에서는 ~가 됩니다"로 따라가서 답한다.
 
 ## 원칙
 
